@@ -1,0 +1,16 @@
+{
+    "name": "farhod/database",
+    "description": "control to sql",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Farhod\\Database\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "farhod"
+        }
+    ],
+    "require": {}
+}

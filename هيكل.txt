@@ -1,0 +1,36 @@
+project/
+│
+├── config/
+│   └── db.php
+│
+├── admin/
+│   ├── dashboard.php
+│   ├── students/
+│   ├── courses/
+│   ├── grades/
+│   ├── materials/
+│   ├── attendance/
+│   └── news/
+│
+├── student/
+│   ├── dashboard.php
+│   ├── profile.php
+│   ├── courses.php
+│   ├── results.php
+│   ├── assignments.php
+│   ├── attendance.php
+│   ├── timetable.php
+│   └── projects.php
+│
+├── uploads/
+│   ├── materials/
+│   ├── assignments/
+│   └── projects/
+│
+├── login.php
+├── logout.php
+├── index.php
+└── assets/
+    ├── css/
+    ├── js/
+    └── images/
