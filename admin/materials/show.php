@@ -7,43 +7,41 @@ if (!isset($_SESSION['login']) || $_SESSION['login']['role'] != 'admin') {
     exit();
 }
 
-$db = new Dbsql("127.0.0.1", "root", "", "university_lms", "materials");
-// نستخدم Join لجلب اسم المادة مع ملف الماتيريال
-$materials = $db->select("materials.*, courses.course_name")
-                ->join("INNER", "courses", "materials.course_id", "courses.course_id")
-                ->all();
+$db = new Dbsql("127.0.0.1", "root", "", "university_lms", "grades");
+$grades = $db->select("grades.*, students.full_name, courses.course_name")
+             ->join("INNER", "students", "grades.student_id", "students.student_id")
+             ->join("INNER", "courses", "grades.course_id", "courses.course_id")
+             ->all();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Materials</title>
+    <title>Manage Grades</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
-    <h1>Materials Management</h1>
-    <a href="form.php">Upload New Material</a> | <a href="../dashboard.php">Dashboard</a>
+    <h1>Grades Record</h1>
+    <a href="form.php">Add New Grade</a> | <a href="../dashboard.php">Dashboard</a>
 
     <table>
         <thead>
             <tr>
+                <th>Student Name</th>
                 <th>Course</th>
-                <th>Title</th>
-                <th>Date</th>
-                <th>File</th>
+                <th>Grade</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach($materials as $m): ?>
+            <?php foreach($grades as $g): ?>
                 <tr>
-                    <td><?= $m['course_name'] ?></td>
-                    <td><?= $m['title'] ?></td>
-                    <td><?= $m['upload_date'] ?></td>
-                    <td><a href="../../uploads/materials/<?= $m['file_path'] ?>" target="_blank">View PDF</a></td>
+                    <td><?= $g['full_name'] ?></td>
+                    <td><?= $g['course_name'] ?></td>
+                    <td><strong><?= $g['grade'] ?></strong></td>
                     <td>
-                        <a href="delete.php?id=<?= $m['material_id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                        <a href="delete.php?id=<?= $g['grade_id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

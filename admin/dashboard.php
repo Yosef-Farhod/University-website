@@ -15,7 +15,10 @@
     <br>
     <a href="courses/show.php">Courses</a>
     <br>
-    <a href="grdes/show.php"></a>
+    <a href="grdes/show.php">grdes</a>
     <br>
+    <a href="materials/show.php">Materials</a>
+    <br>
+
 </body>
 </html>

@@ -1,0 +1,275 @@
+/*القائمه الجانبيه*/
+:root {
+  --primary-blue: #1a73e8;
+  --sidebar-bg: #ffffff;
+  --main-bg: #f8f9fa;
+  --text-dark: #202124;
+  --text-soft: #5f6368;
+  --border: #dadce0;
+  --sidebar-w: 280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--main-bg);
+}
+
+.dashboard-wrapper {
+  display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--sidebar-bg);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-section {
+  margin-bottom: 20px;
+}
+.section-title {
+  padding: 10px 25px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #bdc1c6;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+.sidebar-nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+.sidebar-nav ul li a i:first-child {
+  margin-right: 15px;
+  width: 20px;
+  text-align: center;
+}
+.external-icon {
+  font-size: 10px;
+  margin-left: auto;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+  background: #f1f3f4;
+  color: var(--primary-blue);
+  border-left: 4px solid var(--primary-blue);
+}
+
+.logout-wrapper {
+  margin-top: auto;
+  padding: 20px 25px;
+  border-top: 1px solid var(--border);
+}
+
+.logout-link {
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Content Area */
+.main-content {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  padding: 40px 60px;
+}
+
+.breadcrumb{
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 14px;
+color: #000;
+margin-bottom: 10px;
+}
+.breadcrumb a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.timeline-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #3c4043;
+   background: #e8eaed;
+}
+
+.student-info-strip {
+  background: #e8eaed;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-bottom: 35px;
+  display: inline-block;
+}
+
+.subjects-btn {
+  text-decoration: none;
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+.btn-icon {
+  background: #e8eaed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+/* أساسيات الصفحة */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f7f6;
+    /* شلنا الـ flex من هنا عشان ما يسنترش المحتوى */
+}
+
+.main-wrapper {
+    width: 100%;
+}
+
+/* الهيدر يملأ العرض */
+.header-full {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* منطقة المحتوى تملأ العرض المتاح */
+.page-body {
+    width: 100%; 
+    padding: 30px; /* مسافة من الحواف */
+}
+
+.label-text {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* الكاردات (الصفوف) */
+.card-item {
+    width: 100%; /* تملأ العرض بالكامل */
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.card-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-blue {
+    color: #0066cc;
+    font-weight: 500;
+    min-width: 200px;
+}
+
+/* البادج */
+.badge {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+.file { background: #e3f2fd; color: #1976d2; }
+.assignment { background: #e8f5e9; color: #2e7d32; }
+
+.date { color: #888; font-size: 12px; }
+
+/* الجزء اللي بيفتح */
+.card-content {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.active .card-content {
+    display: block;
+}
+
+.upload-box {
+    border: 2px dashed #bbb;
+    padding: 20px;
+    text-align: center;
+    background: #f9f9f9;
+    margin: 15px 0;
+}
+
+.status {
+    color: #666;
+    font-size: 13px;
+    text-align: center;
+}

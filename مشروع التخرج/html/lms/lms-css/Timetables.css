@@ -1,0 +1,90 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+header {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid #3498db;
+}
+
+.btn-lms {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+    font-weight: bold;
+}
+
+.btn-lms:hover {
+    background: #c0392b;
+}
+
+.group-table {
+    background: white;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2980b9;
+    border-right: 5px solid #2980b9;
+    padding-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.course {
+    background-color: #e1f5fe;
+    font-weight: bold;
+    color: #01579b;
+}
+
+.course span {
+    font-size: 0.8em;
+    color: #555;
+    display: block;
+    font-weight: normal;
+}
+
+.empty {
+    color: #bbb;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+}

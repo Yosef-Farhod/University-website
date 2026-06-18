@@ -10,12 +10,6 @@ if (!isset($_SESSION['login'])) {
 }
 $admin = ($_SESSION['login']['role'] == 'admin');
 
-// $connection = mysqli_connect(hostname: '127.0.0.1', username: 'root', password: '', database: 'test');
-// $sql = "SELECT * FROM `users`;";
-// $reslt =  mysqli_query($connection, $sql);
-
-// $all_users = mysqli_fetch_all($reslt, 1);
-
 $db = new Dbsql(
     "127.0.0.1",
     "root",
@@ -41,45 +35,44 @@ $students = $db
 </head>
 
 <body>
+    <h1>Students Management</h1>
     <?php if ($admin) : ?>
         <a href="form.php">Add student</a>
     <?php endif; ?>
-    <a href="../../logout.php">log out</a>
+    <a href="../courses/show.php">Show Courses</a>
+    <a href="../../logout.php">Log out</a>
 
     <table>
-        <tr>
-            <th>University no</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>level</th>
-            <th>Delete</th>
-            <th>Update</th>
-        </tr>
-        <?php foreach ($students as $key => $value) : ?>
-
+        <thead>
             <tr>
-                <td><?php echo $value['university_no']; ?></td>
-                <td><?= $value['full_name']; ?></td>
-                <td><?= $value['email']; ?></td>
-                <td><?= $value['level']; ?></td>
-                <!-- <td>
-                    <?php
-                    // تحويل النص المخزن في القاعدة إلى مصفوفة باستخدام الفاصلة
-                    $images = explode(",", $value['image_name']);
-                    foreach ($images as $img): if (!empty($img)): ?>
-                        <img src="uploads/<?= $img; ?>" width="50" height="50" style="object-fit: cover; border-radius: 4px; margin-right: 2px;">
-                    <?php endif;
-                    endforeach; ?>
-                </td> -->
-
-                <td><a href="delete.php?id=<?= $value['student_id'] ?>">delete</a></td>
-                <td><a href="edit.php?id=<?= $value['student_id'] ?>">edit</a></td>
+                <th>Uni No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Level</th>
+                <th>Department</th>
+                <?php if ($admin) : ?>
+                    <th>Actions</th>
+                <?php endif; ?>
             </tr>
-        <?php endforeach; ?>
-
+        </thead>
+        <tbody>
+            <?php foreach ($students as $value) : ?>
+                <tr>
+                    <td><?= $value['university_no']; ?></td>
+                    <td><?= $value['full_name']; ?></td>
+                    <td><?= $value['email']; ?></td>
+                    <td>Level <?= $value['level']; ?></td>
+                    <td><?= $value['department']; ?></td>
+                    <?php if ($admin) : ?>
+                        <td>
+                            <a href="edit.php?id=<?= $value['student_id'] ?>">Edit</a> | 
+                            <a href="delete.php?id=<?= $value['student_id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
+                    <?php endif; ?>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
     </table>
 
-
 </body>
-
 </html>

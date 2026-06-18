@@ -1,0 +1,773 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    
+    max-width: 100%;
+    overflow-x: hidden ;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: none;
+    scroll-behavior: smooth;
+}
+img , div , section{
+    max-width: 100%;
+}
+
+
+.top_header {
+    background-color: #144f42;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    transition: 0.3s;
+
+}
+
+.navbar li a i {
+    margin-right: 5px;
+}
+
+.navbar li a:hover {
+    color: #FFD700
+}
+
+.social_icon a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+
+.social_icon a:hover {
+    color: #FFD700;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+}
+
+.hero-container{
+    margin-top: 120px;
+}
+
+.active a {
+    color: #6874ff !important;
+    font-weight: bold; 
+}
+
+.active a i {
+    color: #6874ff;
+}
+
+
+
+/*           */
+.bottom_header {
+    
+    background-color: #FDFBF0;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0, 1);
+    
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.menu_list {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    margin-left: 100px;
+    padding: 0;
+}
+
+.dropdown-check {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    min-width: 260px;
+
+    display: none;
+    min-width: 25%;
+    z-index: 1000;
+}
+
+.submenu li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    color: #444 !important;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.sub-arrow {
+    font-size: 10px;
+    color: #999;
+}
+
+.submenu li a:hover {
+    background-color: #f9f9f9;
+    color: #144f42 !important;
+    padding-left: 20px
+}
+
+.submenu li a:hover .sub-arrow {
+    color: #144f42;
+}
+
+
+.dropdown-check:checked~.submenu {
+    display: block;
+}
+
+/* .dropdown-check:checked ~ .dropdown-btn .arraw{
+    transform: rotate(180deg);
+} */
+
+.menu_list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+
+}
+
+.menu_list li a:hover {
+    color: #144f42;
+
+}
+
+.action_area {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.login_button {
+    background-color: #144f42;
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.4s;
+}
+
+.login_button:hover {
+    background-color: #1a6353;
+    transfrom: scale(1.05);
+}
+
+.search_wrapper {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    width: 350px;
+}
+
+.search_wrapper input {
+    border: none;
+    padding: 15px 20px;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+
+}
+
+.search_wrapper button {
+    background: #144f42;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+
+
+
+
+
+/* تنسيق السكشن الأساسي */
+.faculty-section {
+    width: 100%;
+    padding: 100px 8%; /* مسافة واسعة زي الصورة */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-top: 110px;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* عشان ميسرحش في الشاشات الكبيرة */
+}
+
+/* تنسيق النصوص */
+.text-side {
+    flex: 1.2; /* بياخد مساحة أكبر شوية من الصورة */
+}
+
+.main-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط ناعم */
+    color: #003d3d; /* اللون الزيتي الغامق اللي في الصورة */
+    font-size: 42px; /* حجم كبير وواضح */
+    line-height: 1.2;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.sub-text {
+    color: #555; /* لون رمادي هادي */
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 450px; /* عشان الكلام ينزل سطر جديد زي الصورة */
+}
+
+/* تنسيق الصورة */
+.image-side {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end; /* بيحدف اللوجو لليمين */
+}
+
+.image-side img {
+    width: 350px; /* حجم اللوجو التقريبي */
+    height: auto;
+    opacity: 0.8; /* لو اللوجو باهت شوية زي الصورة */
+}
+
+/* تظبيط الموبايل */
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .image-side {
+        justify-content: center;
+        margin-top: 50px;
+    }
+    .sub-text {
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+.programs-section {
+    padding: 50px 5%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.programs-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: stretch;
+    gap: 30px; /* المسافة بين الكروت */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 50px 5;
+    margin: 0 auto;
+    padding: 40px 10px;
+    max-width: 1300px;
+
+   
+
+} 
+
+
+.program-card {
+    min-width: 300px;
+    flex: 0 0 calc(33.33% - 20px);
+    /* float: 0 0 300px; */
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 40px 30px;
+    width: 320px;
+    text-decoration: none; /* شيل الخط اللي تحت اللينك */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: all 0.4s ease; /* سرعة حركة الهوفر */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير الـ Hover */
+.program-card:hover {
+    background-color: #72a9d1; /* اللون الأزرق اللي في الفيديو */
+    transform: translateY(-10px); /* الكارت يترفع لفوق شوية */
+}
+
+.program-card:hover h3, 
+.program-card:hover p, 
+.program-card:hover .learn-more {
+    color: #fff; /* تحويل النص للأبيض عند الهوفر */
+}
+
+/* تنسيق الأيقونة */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #1a415a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 25px;
+    transition: background-color 0.3s;
+}
+
+.program-card:hover .icon-circle {
+    background-color: #fff;
+    color: #1a415a;
+}
+
+.program-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.program-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.learn-more {
+    font-weight: bold;
+    color: #008cba;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.video-link-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.video-title h2 {
+    color: #1a415a; /* اللون الكحلي اللي في الصورة */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.video-title p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.video-container {
+    display: block;
+    position: relative;
+    max-width: 900px; /* العرض المظبوط زي الصورة */
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.video-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* تأثير بسيط لما الماوس ييجي على الصورة */
+.video-container:hover img {
+    transform: scale(1.02);
+}
+
+/* أيقونة الـ Play في نص الصورة */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(26, 65, 90, 0.9); /* نفس لون الجامعة */
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    pointer-events: none; /* عشان الضغطة تيجي في اللينك مش الزرار */
+}
+
+
+
+
+
+
+.vision-mission {
+    padding: 80px 10%;
+    background-color: #f9f9f9; /* لون خلفية هادي زي الصورة */
+}
+
+.vision-mission .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.content-side {
+    flex: 1;
+}
+
+.content-side .item {
+    margin-bottom: 40px;
+}
+
+.content-side h3 {
+    font-style: italic; /* عشان الكلمة مايلة زي الصورة */
+    font-weight: bold;
+    color: #1a415a;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.content-side p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.image-side {
+    flex: 1;
+}
+
+.image-side img {
+    width: 100%;
+    border-radius: 15px; /* الحواف الدائرية للصورة */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* عشان التصميم يبقى مظبوط على الموبايل */
+@media (max-width: 768px) {
+    .vision-mission .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.faculty-staff {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #1a415a; /* اللون الكحلي الأساسي */
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.staff-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.staff-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: #fff;
+    border: 1px solid #f0f0f0; /* حدود خفيفة جداً زي الصورة */
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    transition: all 0.4s ease; /* سرعة حركة الهوفر */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+/* --- تأثير الـ Hover اللي طلبته --- */
+.staff-card:hover {
+    transform: translateY(-10px); /* الكارت يترفع لفوق */
+    border-color: #1a415a; /* الحدود تقلب كحلي */
+    box-shadow: 0 15px 30px rgba(26, 65, 90, 0.1); /* ظل ناعم كحلي */
+}
+
+.staff-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.staff-info .role {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.staff-info .sub-role {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* تنسيق الأيقونات الصغيرة اللي تحت */
+.staff-icons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.staff-icons a {
+    color: #1a415a;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.staff-icons a:hover {
+    color: #5d93b4; /* اللون الأزرق الفاتح عند الوقوف عليها */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.university-footer {
+    background-color: #0d3b33; 
+    color: #ffffff;
+    padding: 30px 0 15px 0; 
+}
+
+
+.footer-container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px; 
+}
+
+
+.footer-col {
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 20px;
+}
+
+
+.logos-col .footer-logo img {
+    display: block;
+    max-width: 75px; 
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+
+.col-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+
+.footer-links {
+    list-style: none;
+}
+
+
+.footer-links li {
+    margin-bottom: 4px; 
+}
+
+.footer-links li a {
+    color: #b0c4c1; 
+    text-decoration: none;
+    font-size: 13px; 
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+
+.footer-links li a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 15px 50px 0 50px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottom-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.social-links a {
+    color: white;
+    font-size: 16px;
+}
+
+/* النص اللي تحت خالص */
+.developer-tag {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #6a8b86;
+}
+
+/* تظبيط الموبايل عشان ميبوظش */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .footer-col {
+        margin-bottom: 25px;
+    }
+}

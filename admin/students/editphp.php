@@ -1,11 +1,15 @@
 <?php
-
 $editUser = $_POST;
+$connection = mysqli_connect(hostname: '127.0.0.1', username: 'root', password: '', database: 'university_lms');
 
-$connection = mysqli_connect(hostname: '127.0.0.1', username: 'root', password: '', database: 'test');
+$full_name = $editUser['full_name'];
+$email = $editUser['email'];
+$level = $editUser['level'];
+$dept = $editUser['department'];
+$id = $editUser['student_id'];
 
-mysqli_query($connection, "UPDATE `users` SET `name` = '$editUser[name]',`age`= $editUser[age] WHERE `users`.`id` = $editUser[id];");
+$sql = "UPDATE `students` SET `full_name` = '$full_name', `email` = '$email', `level` = $level, `department` = '$dept' WHERE `student_id` = $id;";
+mysqli_query($connection, $sql);
 
-if (mysqli_affected_rows($connection)) {
-    header("location: show.php");
-}
+header("location: show.php");
+exit();
